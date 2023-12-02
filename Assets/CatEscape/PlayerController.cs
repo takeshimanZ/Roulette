@@ -10,6 +10,18 @@ public class PlayerController : MonoBehaviour
         Application.targetFrameRate = 60;
     }
 
+    public void LButtonDown()
+    {
+        transform.Translate(-3,0,0);
+    }
+
+    public void RButtonDown()
+    {
+        transform.Translate(3,0,0);
+    }
+
+
+
     // Update is called once per frame
     void Update()
     {
@@ -26,15 +38,15 @@ public class PlayerController : MonoBehaviour
         // }
 
         //左矢印が押されたとき
-        if(Input.GetKey(KeyCode.LeftArrow))
+        if(Input.GetKey(KeyCode.LeftArrow))LButtonDown();
         {
-            transform.Translate(-3*Time.deltaTime,0,0); //左に[3]動かす 
+            // transform.Translate(-3*Time.deltaTime,0,0); //左に[3]動かす 
         }
 
           //右矢印が押されたとき
-        if(Input.GetKey(KeyCode.RightArrow))
+        if(Input.GetKey(KeyCode.RightArrow))RButtonDown();
         {
-            transform.Translate(3*Time.deltaTime,0,0); //右に[3]動かす 
+            // transform.Translate(3*Time.deltaTime,0,0); //右に[3]動かす 
         }
     }
 }
